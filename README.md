@@ -44,7 +44,7 @@ rave preprocess --input_path /path/to/audio --output_path /dataset/path --sampli
 
 ## Training
 
-In our experiments we used **v1** of RAVE with specific configurations, making the model suitable for the plugin's environment. Please note that configurations other than those mentioned below may lead to undesirable outcome or cause harm to the export process. To start training:
+In our experiments we used **v1** of RAVE with specific configurations, making the model suitable for the plugin's environment. Please note that configurations other than those mentioned below may lead to undesirable outcome or cause harm to the export process.
 
 ```bash
 rave train --config v1 --config centered --db_path /dataset/path --name training_name --override LATENT_SIZE=16 --override CAPACITY=32 

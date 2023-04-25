@@ -9,7 +9,7 @@
 ## Colab
 
 - If you are **new** to machine learning, we encourage you to start with this notebook.
-There we have compiled all necessary instructions to begin creating your custom sounding Scyclone presets.
+There we have compiled all the instructions to begin creating your custom sounding Scyclone presets.
 
   [![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xKsaGDMWY1NRhP0ndD-iVg89O57GdZdz?usp=sharing) 
 

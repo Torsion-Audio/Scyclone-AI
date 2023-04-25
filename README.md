@@ -66,6 +66,6 @@ Once you have the trained model exported, you are ready to use it as a preset in
 - Save the model to your local drive 
 - Open the plugin
 - Hover over one of the network nodes in order for the network arm to appear. 
-- Click on the load model icon and load the preset.
+- Click on the load model buttton and load the preset.
 
 ![interface](assets/load_model.png)

@@ -9,11 +9,11 @@
 ## Colab
 
 If you are new to machine learning, we encourage you to start with this notebook.
-There we have compiled all the necessary information and instructions to begin creating your custom sounding Scyclone presets.
+There we have compiled all necessary informatiosn and instructions to begin creating your custom sounding Scyclone presets.
 
 [![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xKsaGDMWY1NRhP0ndD-iVg89O57GdZdz?usp=sharing) 
 
-If you hold former AI model training knowledge and want to use a notebook to train your custom sounding Scyclone preset, start with this notebook. All parameters and configurations are compiled and set to train, export and start using the models inside Scyclone. 
+If you hold former AI model training knowledge and want to use a notebook to train a Scyclone preset, start with the notebook below. All parameters and configurations are set to train, export and start using the models inside the plugin. 
 
 [![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DU9KvMdYTOcTT8eYundZ2wruetNDtpX0?usp=sharing) 
 

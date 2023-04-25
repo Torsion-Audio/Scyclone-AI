@@ -52,7 +52,7 @@ rave train --config v1 --config centered --db_path /dataset/path --name training
 
 ## Export
 
-Once the training is finished, use the script below to export the model.
+Run this script to export the model after training.
 
 ```bash
 rave export_onnx --run /path/to/run
@@ -64,7 +64,7 @@ rave export_onnx --run /path/to/run
 Once you have the trained model exported, you are ready to use it as a preset inside **Scyclone**. 
 
 - Save the model to your local drive 
-- Open the application 
+- Open the plugin
 - Hover over one of the network nodes in order for the network arm to appear. 
 - Click on the load model icon and load the preset.
 

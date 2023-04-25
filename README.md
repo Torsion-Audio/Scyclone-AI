@@ -8,21 +8,21 @@
 
 ## Colab
 
-If you are new to machine learning, we encourage you to start with this notebook.
-There we have compiled all necessary informatiosn and instructions to begin creating your custom sounding Scyclone presets.
+- If you are **new** to machine learning, we encourage you to start with this notebook.
+There we have compiled all necessary instructions to begin creating your custom sounding Scyclone presets.
 
-[![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xKsaGDMWY1NRhP0ndD-iVg89O57GdZdz?usp=sharing) 
+  [![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xKsaGDMWY1NRhP0ndD-iVg89O57GdZdz?usp=sharing) 
 
-If you hold former AI model training knowledge and want to use a notebook to train a Scyclone preset, start with the notebook below. All parameters and configurations are set to train, export and start using the models inside the plugin. 
+- If you hold former AI model training knowledge and want to use a notebook to train a Scyclone preset, start with the notebook below. All parameters and configurations are set to train, export and start using the models inside the plugin. 
 
-[![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DU9KvMdYTOcTT8eYundZ2wruetNDtpX0?usp=sharing) 
+  [![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DU9KvMdYTOcTT8eYundZ2wruetNDtpX0?usp=sharing) 
 
 
 
 
 ## Installation
 
-Scyclone uses RAVE as the timbre tranfer engine. to install RAVE, create a new virtual environment, activate it and run:
+Scyclone uses RAVE as its timbre tranfer algorithm. to install RAVE, create a new virtual environment, activate it and run:
 
 ```bash
 pip install acids-rave
@@ -44,7 +44,7 @@ rave preprocess --input_path /path/to/audio --output_path /dataset/path --sampli
 
 ## Training
 
-In our experiments we used **v1** of RAVE with specific configurations, making the model suitable for the plugin's environment. Please note that configurations other than those mentioned below may lead to undesirable outcome or cause harm to the export process.
+In our experiments we used **v1** of RAVE with specific configurations, making the model suitable for the plugin's environment. Please note that configurations other than ones mentioned below may lead to an undesirable outcome or cause errors during the export process.
 
 ```bash
 rave train --config v1 --config centered --db_path /dataset/path --name training_name --override LATENT_SIZE=16 --override CAPACITY=32 
@@ -52,7 +52,7 @@ rave train --config v1 --config centered --db_path /dataset/path --name training
 
 ## Export
 
-Once the training is finished, used the script below to export your preset.
+Once the training is finished, use the script below to export the model.
 
 ```bash
 rave export_onnx --run /path/to/run

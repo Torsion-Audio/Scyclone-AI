@@ -22,7 +22,7 @@ There we have compiled all the instructions to begin creating your custom soundi
 
 ## Installation
 
-Scyclone uses RAVE as its timbre tranfer algorithm. to install RAVE, create a new virtual environment, activate it and run:
+Scyclone uses RAVE as its timbre tranfer algorithm. To install RAVE, create a new virtual environment, activate it and run:
 
 ```bash
 pip install acids-rave

@@ -47,7 +47,7 @@ rave preprocess --input_path /path/to/audio --output_path /dataset/path --sampli
 In our experiments we used **v1** of RAVE with specific configurations, making the model suitable for the plugin's environment. Please note that configurations other than ones mentioned below may lead to an undesirable outcome or cause errors during the export process.
 
 ```bash
-rave train --config v1 --config centered --db_path /dataset/path --name training_name --override LATENT_SIZE=16 --override CAPACITY=32 
+rave train --config v1 --db_path /dataset/path --name training_name --override LATENT_SIZE=16 --override CAPACITY=32 
 ```
 
 ## Export onnx

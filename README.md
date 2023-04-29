@@ -50,7 +50,7 @@ In our experiments we used **v1** of RAVE with specific configurations, making t
 rave train --config v1 --config centered --db_path /dataset/path --name training_name --override LATENT_SIZE=16 --override CAPACITY=32 
 ```
 
-## Export
+## Export onnx
 
 Run this script to export the model after training.
 
@@ -60,22 +60,27 @@ rave export_onnx --run /path/to/run
 
 ## Conversion
 
+We now need to convert the ONNX model to ORT (onnxruntime) format, which is essential for a customized and streamlined version of the ONNX Runtime static library to be utilized within Scyclone. This conversion ensures that the model is compatible with the specific requirements of the plugin hence enabling an  optimal performance of the model.
 
-1. Checkout ONNX Runtime `$ git clone https://github.com/microsoft/onnxruntime.git` (Tested with onnxruntime v1.14.1)
+Assuming you have used a virtual environment for training your model, to avoid potential dependency conflicts and incompatibilities, we reccommend deactivating the previous virtual environment and follow these steps.
+
+1. Checkout ONNX Runtime `$ git clone https://github.com/microsoft/onnxruntime.git` (tested with onnxruntime v1.14.1)
 
 2. Place your model in the folder named model.onnx
 
-3. Create a [virtual environment](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments) `$ python3 -m venv venv`
+3. Create another virtual environment for the conversion
 
-4. Activate it (Mac) `$ source ./venv/bin/activate` Windows `$ source ./venv/bin/activate`
+4. Activate it
 
-5. 'cd ort-builder'  
+5. cd ort-builder  
 
 6. Install dependencies `$ pip install -r requirements.txt`
 
 7. Run `$ ./convert-model-to-ort.sh model.onnx`
 
 8. Build static libraries using one of the `build-xxx.sh` shell scripts
+
+
 
 ## Usage
 

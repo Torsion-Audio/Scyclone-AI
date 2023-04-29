@@ -58,6 +58,22 @@ Run this script to export the model after training.
 rave export_onnx --run /path/to/run
 ```
 
+## Conversion
+
+
+1. Checkout ONNX Runtime `$ git clone https://github.com/microsoft/onnxruntime.git` (Tested with onnxruntime v1.14.1)
+
+2. Place your model in the folder named model.onnx
+
+3. Create a [virtual environment](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments) `$ python3 -m venv venv`
+
+4. Activate it (Mac) `$ source ./venv/bin/activate` Windows `$ source ./venv/bin/activate`
+
+5. Install dependencies `$ pip install -r requirements.txt`
+
+6. Run `$ ./convert-model-to-ort.sh model.onnx`
+
+7. Build static libraries using one of the `build-xxx.sh` shell scripts
 
 ## Usage
 

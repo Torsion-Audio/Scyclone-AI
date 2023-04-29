@@ -72,7 +72,7 @@ Assuming you have used a virtual environment for training your model, to avoid p
 
 4. Activate it
 
-5. cd ort-builder  
+5. Navigate into the ort-builder directory  
 
 6. Install dependencies `$ pip install -r requirements.txt`
 

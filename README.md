@@ -60,7 +60,7 @@ rave export_onnx --run /path/to/run
 
 ## Conversion
 
-We now need to convert the ONNX model to ORT (onnxruntime) format, which is essential for a customized and streamlined version of the ONNX Runtime static library to be utilized within Scyclone. This conversion ensures that the model is compatible with the specific requirements of the plugin hence enabling an  optimal performance of the model.
+We now need to convert the ONNX model to ORT (onnxruntime) format, which is essential for a customized and streamlined version of the ONNX Runtime static library to be utilized within Scyclone. This conversion ensures that the model is compatible with the specific requirements of the plugin hence it enables an optimal performance of the model.
 
 Assuming you have used a virtual environment for training your model, to avoid potential dependency conflicts and incompatibilities, we reccommend deactivating the previous virtual environment and follow these steps.
 

@@ -69,11 +69,13 @@ rave export_onnx --run /path/to/run
 
 4. Activate it (Mac) `$ source ./venv/bin/activate` Windows `$ source ./venv/bin/activate`
 
-5. Install dependencies `$ pip install -r requirements.txt`
+5. 'cd ort-builder'  
 
-6. Run `$ ./convert-model-to-ort.sh model.onnx`
+6. Install dependencies `$ pip install -r requirements.txt`
 
-7. Build static libraries using one of the `build-xxx.sh` shell scripts
+7. Run `$ ./convert-model-to-ort.sh model.onnx`
+
+8. Build static libraries using one of the `build-xxx.sh` shell scripts
 
 ## Usage
 

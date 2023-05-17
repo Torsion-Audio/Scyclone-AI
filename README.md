@@ -66,7 +66,7 @@ Assuming you have used a virtual environment for training your model, to avoid p
 
 1. Checkout ONNX Runtime `$ git clone https://github.com/microsoft/onnxruntime.git` (tested with onnxruntime v1.14.1)
 
-2. Place your model in the folder named model.onnx
+2. Place your model in a folder named model.onnx
 
 3. Create another virtual environment for the conversion
 

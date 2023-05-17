@@ -1,0 +1,165 @@
+from __gin__ import dynamic_registration
+import cached_conv as cc
+from cached_conv import convs
+import rave
+from rave import balancer
+from rave import blocks
+from rave import core
+from rave import dataset
+from rave import discriminator
+from rave import model
+from rave import pqmf
+import torch
+
+# Macros:
+# ==============================================================================
+CAPACITY = 32
+LATENT_SIZE = 16
+N_BAND = 16
+PHASE_1_DURATION = 1000000
+RATIOS = [4, 4, 4, 2]
+SAMPLING_RATE = 44100
+
+# Parameters for core.AudioDistanceV1:
+# ==============================================================================
+core.AudioDistanceV1.log_epsilon = 1e-07
+core.AudioDistanceV1.multiscale_stft = @core.MultiScaleSTFT
+
+# Parameters for balancer.Balancer:
+# ==============================================================================
+balancer.Balancer.deny_list = ['regularization']
+balancer.Balancer.ema_averager = @balancer.EMA
+balancer.Balancer.scale_gradients = False
+balancer.Balancer.weights = {'feature_matching': 10, 'regularization': 0.1}
+
+# Parameters for pqmf.CachedPQMF:
+# ==============================================================================
+pqmf.CachedPQMF.attenuation = 100
+pqmf.CachedPQMF.n_band = %N_BAND
+
+# Parameters for cc.Conv1d:
+# ==============================================================================
+cc.Conv1d.bias = False
+
+# Parameters for variational/cc.Conv1d:
+# ==============================================================================
+variational/cc.Conv1d.bias = False
+
+# Parameters for scales/torch.nn.Conv1d:
+# ==============================================================================
+scales/torch.nn.Conv1d.bias = True
+scales/torch.nn.Conv1d.device = None
+scales/torch.nn.Conv1d.dilation = 1
+scales/torch.nn.Conv1d.dtype = None
+scales/torch.nn.Conv1d.groups = 1
+scales/torch.nn.Conv1d.padding = 0
+scales/torch.nn.Conv1d.padding_mode = 'zeros'
+scales/torch.nn.Conv1d.stride = 1
+
+# Parameters for scales/discriminator.ConvNet:
+# ==============================================================================
+scales/discriminator.ConvNet.capacity = %CAPACITY
+scales/discriminator.ConvNet.conv = @torch.nn.Conv1d
+scales/discriminator.ConvNet.in_size = 1
+scales/discriminator.ConvNet.kernel_size = 15
+scales/discriminator.ConvNet.n_layers = 4
+scales/discriminator.ConvNet.out_size = 1
+scales/discriminator.ConvNet.stride = 4
+
+# Parameters for cc.ConvTranspose1d:
+# ==============================================================================
+cc.ConvTranspose1d.bias = False
+
+# Parameters for balancer.EMA:
+# ==============================================================================
+balancer.EMA.beta = 0.999
+
+# Parameters for variational/blocks.Encoder:
+# ==============================================================================
+variational/blocks.Encoder.capacity = %CAPACITY
+variational/blocks.Encoder.data_size = %N_BAND
+variational/blocks.Encoder.latent_size = %LATENT_SIZE
+variational/blocks.Encoder.n_out = 2
+variational/blocks.Encoder.ratios = %RATIOS
+variational/blocks.Encoder.recurrent_layer = None
+variational/blocks.Encoder.repeat_layers = 1
+variational/blocks.Encoder.sample_norm = False
+
+# Parameters for blocks.Generator:
+# ==============================================================================
+blocks.Generator.capacity = %CAPACITY
+blocks.Generator.data_size = %N_BAND
+blocks.Generator.latent_size = %LATENT_SIZE
+blocks.Generator.loud_stride = 1
+blocks.Generator.ratios = %RATIOS
+blocks.Generator.recurrent_layer = None
+blocks.Generator.use_noise = False
+
+# Parameters for convs.get_padding:
+# ==============================================================================
+convs.get_padding.dilation = 1
+convs.get_padding.mode = 'centered'
+convs.get_padding.stride = 1
+
+# Parameters for scales/convs.get_padding:
+# ==============================================================================
+scales/convs.get_padding.dilation = 2
+
+# Parameters for variational/convs.get_padding:
+# ==============================================================================
+variational/convs.get_padding.dilation = 1
+variational/convs.get_padding.mode = 'centered'
+variational/convs.get_padding.stride = 1
+
+# Parameters for discriminator.MultiScaleDiscriminator:
+# ==============================================================================
+discriminator.MultiScaleDiscriminator.convnet = @scales/discriminator.ConvNet
+discriminator.MultiScaleDiscriminator.n_discriminators = 3
+
+# Parameters for core.MultiScaleSTFT:
+# ==============================================================================
+core.MultiScaleSTFT.magnitude = True
+core.MultiScaleSTFT.normalized = False
+core.MultiScaleSTFT.num_mels = None
+core.MultiScaleSTFT.sample_rate = %SAMPLING_RATE
+core.MultiScaleSTFT.scales = [2048, 1024, 512, 256, 128]
+
+# Parameters for blocks.normalization:
+# ==============================================================================
+blocks.normalization.mode = 'weight_norm'
+
+# Parameters for scales/blocks.normalization:
+# ==============================================================================
+scales/blocks.normalization.mode = 'weight_norm'
+
+# Parameters for model.RAVE:
+# ==============================================================================
+model.RAVE.audio_distance = @core.AudioDistanceV1
+model.RAVE.balancer = @balancer.Balancer
+model.RAVE.decoder = @blocks.Generator
+model.RAVE.discriminator = @discriminator.MultiScaleDiscriminator
+model.RAVE.encoder = @blocks.VariationalEncoder
+model.RAVE.feature_matching_fun = @feature_matching/core.mean_difference
+model.RAVE.gan_loss = @core.hinge_gan
+model.RAVE.latent_size = %LATENT_SIZE
+model.RAVE.multiband_audio_distance = @core.AudioDistanceV1
+model.RAVE.num_skipped_features = 0
+model.RAVE.phase_1_duration = %PHASE_1_DURATION
+model.RAVE.pqmf = @pqmf.CachedPQMF
+model.RAVE.sampling_rate = %SAMPLING_RATE
+model.RAVE.update_discriminator_every = 2
+model.RAVE.valid_signal_crop = False
+model.RAVE.warmup_quantize = None
+
+# Parameters for blocks.ResidualStack:
+# ==============================================================================
+blocks.ResidualStack.dilations_list = [[1, 1], [3, 1], [5, 1]]
+blocks.ResidualStack.kernel_sizes = [3]
+
+# Parameters for dataset.split_dataset:
+# ==============================================================================
+dataset.split_dataset.max_residual = 1000
+
+# Parameters for blocks.VariationalEncoder:
+# ==============================================================================
+blocks.VariationalEncoder.encoder = @variational/blocks.Encoder

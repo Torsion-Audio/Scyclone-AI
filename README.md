@@ -74,7 +74,7 @@ Assuming you have used a virtual environment for training your model, to avoid p
 
 5. Place the .onnx model in the ort-builder directory
 
-6. Run `$ ./convert-model-to-ort.sh modelname.onnx`
+6. Run `$ ./convert-model-to-ort.sh filename.onnx` (replace filename.onnx with your filename)
 
 
 

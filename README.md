@@ -64,19 +64,11 @@ We now need to convert the ONNX model to ORT (onnxruntime) format, which is esse
 
 Assuming you have used a virtual environment for training your model, to avoid potential dependency conflicts and incompatibilities, we reccommend deactivating the previous virtual environment and follow these steps.
 
-1. Checkout ONNX Runtime `$ git clone https://github.com/microsoft/onnxruntime.git` (tested with onnxruntime v1.14.1)
+1. cd into the ort-builder directory  
 
-2. Create another virtual environment for the conversion
+2. Place the .onnx model in the ort-builder directory
 
-3. Activate it
-
-4. cd into the ort-builder directory  
-
-5. Rename the .onnx model to "model.onnx" and place it in the ort-builder directory
-
-5. Install dependencies `$ pip install -r requirements.txt`
-
-6. Run `$ ./convert-model-to-ort.sh modelname.onnx`
+3. Run `$ ./convert-model-to-ort.sh modelname.onnx`
 
 
 

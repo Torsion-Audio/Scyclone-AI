@@ -8,3 +8,4 @@ model/*
 *.pyc
 libs
 onnxruntime.xcframework
+.DS_Store

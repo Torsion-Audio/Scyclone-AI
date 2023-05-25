@@ -66,19 +66,17 @@ Assuming you have used a virtual environment for training your model, to avoid p
 
 1. Checkout ONNX Runtime `$ git clone https://github.com/microsoft/onnxruntime.git` (tested with onnxruntime v1.14.1)
 
-2. Place your model in a folder named model.onnx
+2. Create another virtual environment for the conversion
 
-3. Create another virtual environment for the conversion
+3. Activate it
 
-4. Activate it
+4. cd into the ort-builder directory  
 
-5. cd into the ort-builder directory  
+5. Rename the .onnx model to "model.onnx" and place it in the ort-builder directory
 
-6. Install dependencies `$ pip install -r requirements.txt`
+5. Install dependencies `$ pip install -r requirements.txt`
 
-7. Run `$ ./convert-model-to-ort.sh model.onnx`
-
-8. Build static libraries using one of the `build-xxx.sh` shell scripts
+6. Run `$ ./convert-model-to-ort.sh modelname.onnx`
 
 
 

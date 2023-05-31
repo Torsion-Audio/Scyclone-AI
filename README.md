@@ -1,6 +1,6 @@
 # <img style="float: left;" src="assets/logo.png" width="40" /> &nbsp; SCYCLONE | AI
 
-**Scyclone AI** repository is an extension to the main [Scyclone](https://github.com/Torsion-Audio/Scyclone) repository. Scyclone is an audio plugin that utilizes **neural timbre transfer** technology to offer a new approach to audio production. The plugin builds upon [RAVE](https://github.com/acids-ircam/RAVE) methodology, a realtime audio variational auto encoder, facilitating neural timbre transfer in both single and couple inference mode. <br /><br />This repository contains a comprehensive step-by-step instruction that will guide you through the process of creating your own custom sounding presets. You can use both the Colab notebooks or command line to train models.
+**Scyclone AI** repository is an extension to the main [Scyclone](https://github.com/Torsion-Audio/Scyclone) repository. Scyclone is an audio plugin that utilizes **neural timbre transfer** technology to offer a new approach to audio production. The plugin builds upon [RAVE](https://github.com/acids-ircam/RAVE) methodology, a realtime audio variational auto encoder, facilitating neural timbre transfer in both single and couple inference mode. <br /><br />This repository contains a comprehensive step-by-step instruction that will guide you through the process of creating your own custom sounding presets (training scripts adopted from Raves original Github-Page). You can use both the Colab notebooks or command line to train models.
 
 
 

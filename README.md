@@ -92,6 +92,6 @@ Once you have the trained model exported, you are ready to use it as a preset in
 RAVE Original repo:
 https://github.com/acids-ircam/RAVE
 
-Some code for the notbook adopted from: https://github.com/moiseshorta
+Some code for the notebook adopted from: https://github.com/moiseshorta
 
 

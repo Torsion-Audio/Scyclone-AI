@@ -64,7 +64,7 @@ Assuming you have used a virtual environment for training your model, to avoid p
 
 1. Create a [virtual environment](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments) `$ python3 -m venv venv`
 
-2. Activate it (Mac) `$ source ./venv/bin/activate` Windows `$ .\venv\Scripts\activate.bat`
+2. Activate it (Mac) `$ source ./venv/bin/activate` (Windows) `$ .\venv\Scripts\activate.bat`
 
 3. Install dependencies `$ pip install -r requirements.txt`
 

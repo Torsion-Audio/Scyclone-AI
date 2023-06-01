@@ -18,8 +18,6 @@ There we have compiled all the instructions to begin creating your custom soundi
   [![colab_badge](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DU9KvMdYTOcTT8eYundZ2wruetNDtpX0?usp=sharing) 
 
 
-
-
 ## Installation
 
 Scyclone uses RAVE as its timbre transfer algorithm. To install RAVE, create a new virtual environment, activate it and run:
@@ -66,7 +64,7 @@ Assuming you have used a virtual environment for training your model, to avoid p
 
 1. Create a [virtual environment](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments) `$ python3 -m venv venv`
 
-2. Activate it (Mac) `$ source ./venv/bin/activate` Windows `$ source ./venv/bin/activate`
+2. Activate it (Mac) `$ source ./venv/bin/activate` Windows `$ .\venv\Scripts\activate.bat`
 
 3. Install dependencies `$ pip install -r requirements.txt`
 
@@ -88,3 +86,12 @@ Once you have the trained model exported, you are ready to use it as a preset in
 - Click on the load model buttton and load the preset.
 
 ![interface](assets/load_model.png)
+
+## References
+
+RAVE Original repo:
+https://github.com/acids-ircam/RAVE
+
+Some code for the notbook adopted from: https://github.com/moiseshorta
+
+

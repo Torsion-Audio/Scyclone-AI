@@ -92,8 +92,8 @@ Once you have the trained model exported, you are ready to use it as a preset in
 RAVE Original repo:
 https://github.com/acids-ircam/RAVE
 
-ort conversion: https://github.com/olilarkin/ort-builder
+ORT Conversion: https://github.com/olilarkin/ort-builder
 
-Some code for the notebook adopted from: https://github.com/moiseshorta
+Some code for the Jupyter notebooks adopted from: https://github.com/moiseshorta
 
 

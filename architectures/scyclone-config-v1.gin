@@ -18,7 +18,7 @@ LATENT_SIZE = 16
 N_BAND = 16
 PHASE_1_DURATION = 1000000
 RATIOS = [4, 4, 4, 2]
-SAMPLING_RATE = 44100
+SAMPLING_RATE = 48000
 
 # Parameters for core.AudioDistanceV1:
 # ==============================================================================

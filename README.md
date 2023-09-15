@@ -80,10 +80,10 @@ Assuming you have used a virtual environment for training your model, to avoid p
 
 Once you have the trained model exported, you are ready to use it as a preset inside **Scyclone**. 
 
-- Save the convereted .ort model to your local drive 
+- Save the converted .ort model to your local drive 
 - Open the plugin
 - Hover over one of the network nodes in order for the network arm to appear. 
-- Click on the load model buttton and load the preset.
+- Click on the load model button and load the preset.
 
 ![interface](assets/load_model.png)
 
